@@ -12,7 +12,7 @@
 
 #### Section B
 
-_Tuesday/Thursday 2:00 PM – 3:50PM;
+_Tuesday/Thursday 10:00 AM – 11:50 AM;
 370 Jay St Room 311
 Loc: Brooklyn Campus_
 

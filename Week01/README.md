@@ -22,3 +22,5 @@
   - DO NOT WORRY ABOUT CSS STYLING THIS WEEK!
 
 - Use `git add` `git commit` and `git push` to upload these folders and files to Github, just like we did in class this week.
+
+**Reminder: Documentation is 5% of your grade at IDM. A clean repo with detailed markdown files and commented code is an easy way to achieve this!**

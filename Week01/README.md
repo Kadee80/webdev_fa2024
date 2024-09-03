@@ -2,7 +2,7 @@
 
 - [Read Through This Git Tutorial](http://rogerdudler.github.io/git-guide/)
 
-- Add your github repo link to the [class roster google doc](https://docs.google.com/spreadsheets/d/1mptgxdD0XdaCIBRf2HWL-ANWwcwrEdOCwUVvQSTkMgA/edit?usp=sharing).
+- Add your github repo link to the [class roster google doc](https://docs.google.com/spreadsheets/d/1uGzKrB2rdEP1J1wsJKLd_fUrd7sKKy0NIoaOFy8lzvI/edit?usp=sharing).
   Make sure you add your name/email/repo to the correct sheet/section. You can view different sheets via the labeled tabs on the bottom.
 
 - Make sure you have all software set up for next class. We won’t be using Photoshop for a few weeks but please inquire about the student discounts.

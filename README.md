@@ -13,15 +13,7 @@
 #### Section B
 
 _Tuesday/Thursday 2:00 PM – 3:50PM;
-370 Jay St Room 308
-Loc: Brooklyn Campus_
-
----
-
-#### Section D
-
-_Tuesday/Thursday 4:00 PM – 5:50PM;
-370 Jay St Room 308
+370 Jay St Room 311
 Loc: Brooklyn Campus_
 
 ---
@@ -136,14 +128,15 @@ If you are student with a disability who is requesting accommodations, please co
 
 ## Notable Dates
 
-_Feb 4, 2024_- Last day to drop/add on Albert for all students. Last day to drop Spring 2024 classes and not receive a grade of 'W'.
+_Sept 16, 2024_- Last day to drop/add on Albert for all students. Last day to drop Fall 2024 classes and not receive a grade of 'W'.
 
-_Feb 9, 2024_ - Presidents Day. No classes scheduled / University Holiday
+_Oct 14 - 24, 2024_ - Fall Break, No classes scheduled / University Holiday
+_Oct 15 - 24, 2024_ - Legislative Monday - Classes meet according to Monday schedule on this Tuesday
 
-_March 16 - 24, 2024_ - SpringBreak, No classes scheduled / University Holiday
+_Nov 25, 2024_ - Fall 2024 withdrawal deadline. Last day a student can withdraw from the course and receive a W.
 
-_April 23, 2024_ - Spring 2024 withdrawal deadline. Last day a student can withdraw from the course and receive a W.
+_Nov 28-32, 2024_ - Thanksgiving Recess
 
-_May 6, 2024_ - Last day of Spring Classes
+_Dec 12 , 2024_ - Last day of Fall classes
 
-_May 8 -14 , 2024_ - Final Exam Week
+_Dec 16 , 2024_ - Exam Week Begins

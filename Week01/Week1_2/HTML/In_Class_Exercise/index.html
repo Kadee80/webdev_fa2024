@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- this specifies the character set encoding.
+     without this tag our fonts might not load properly -->
+    <meta charset="utf-8" />
+    <!-- the viewport tag sets the initial scale and ensures
+     proper responsive behavior -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The title tag shows up in the browser tab and as the 
+     big blue link in search results -->
+    <title>HTML Elements 101</title>
+    <!-- This is how we make an internal stylesheet -->
+    <style>
+      p {
+        color:blueviolet;
+      }
+
+      h2,h3,h4 {
+        background-color: #269368;
+      }
+
+      a {
+        color: rgb(255, 238, 4);
+        background-color: rgba(0,0,0, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- everything inside the body tag shows up to the user unless
+     modified to not be visible with css -->
+    text without markup still shows up
+    <!-- ONLY 1 H1 per page -->
+    <h1 id="top">
+      Heading 1 is the most important text on the page. We should only have one
+      per page.
+    </h1>
+    <h2>
+      Heading 2, as the numbers get bigger the text gets smaller, so does its
+      weight.
+    </h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 3</h6>
+    <!-- horizontal rule aka page divider -->
+    <hr />
+    <!-- misc text will most likely be p tag -->
+    <p style="color: green;">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pretium,
+      purus at cursus placerat, erat est pretium sem, et blandit enim ipsum sed
+      nunc. Ut rutrum felis ex, ullamcorper vehicula lorem commodo id. Donec
+      tincidunt tristique tincidunt. Phasellus quis felis sit amet quam mattis
+      venenatis non id lorem. Nulla hendrerit felis sit amet ante scelerisque
+      iaculis. Phasellus a augue venenatis magna molestie volutpat vitae vel
+      eros. Maecenas et nulla non magna posuere finibus eget rhoncus nunc. Etiam
+      eget aliquet dolor. Praesent in tellus ac magna bibendum consectetur nec
+      vel erat. Morbi sed efficitur nibh.
+    </p>
+
+    <p>
+      Integer blandit pretium accumsan. Nullam eros ante, pharetra nec commodo
+      sed, aliquet et magna. Nunc eu mattis urna, ac imperdiet est. Duis
+      lobortis nibh ipsum, ut rhoncus odio sagittis at. Nullam laoreet nulla
+      neque. <br />Cras a arcu justo.<br />
+      Vestibulum vitae arcu eu enim varius imperdiet. Mauris sit amet sem
+      dignissim, gravida sem ut, suscipit sapien. Donec fermentum augue vel leo
+      eleifend, eu faucibus ante egestas. Vestibulum ipsum odio, pulvinar sit
+      amet nunc nec, eleifend tempus leo. <div>Donec eu ultricies lacus, in ultricies
+      eros. Praesent ut risus ac felis commodo varius vel ac massa.</div> Duis
+      sollicitudin sodales arcu, sed gravida sem gravida eu. Maecenas imperdiet
+      at neque eu dignissim. Vestibulum iaculis gravida dolor, in mattis enim
+      tempor id. Etiam ut egestas diam, id ultricies est.
+    </p>
+
+    <p>
+      Fusce nulla justo, imperdiet eget magna et, commodo sagittis sem. Cras et
+      tellus et sem suscipit rutrum. Nulla eget gravida tortor. Proin et ligula
+      ipsum. <em>Nulla facilisi.</em> Nunc sollicitudin sem sit amet ligula
+      vehicula mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Sed sollicitudin maximus velit, non ornare mi rhoncus ut. Curabitur eget
+      convallis turpis. <strong>Integer mattis,</strong> lacus et iaculis
+      viverra, purus erat finibus neque, id ultrices mi elit vitae diam. Nulla
+      vulputate mi non lectus laoreet, ut dictum nulla sodales. Maecenas a diam
+      porta, ornare nibh vel, finibus neque.
+      <span style="color: red"
+        >Phasellus tempus lorem est, quis porttitor metus molestie nec.</span
+      >
+    </p>
+
+    <h2>Buttermilk Pancakes</h2>
+    <p>These are the best pancakes in the world!</p>
+    <!-- images hosted on other websites -->
+    <img src="https://tastesbetterfromscratch.com/wp-content/uploads/2024/08/Buttermilk-Pancakes24-1-300x300.jpg"/>
+    <!-- local image same folder -->
+    <img src="pancake.png" width="100px" height="300px"/>
+    <!-- image in a subfolder -->
+    <img src="img/pancake.png" />
+
+    <hr />
+    <!-- # as dummy link -->
+    <a href="#">Dummy Link using #</a>
+    <a href="about/index.html">About Page</a>
+    <!-- linking to an element on the same page by ID -->
+    <a href="#top">Back to top</a>
+    <!-- unordered list aka order doresnt matter! -->
+    <ul>
+      <li>Ingredient</li>
+      <li>Ingredient</li>
+      <li>Ingredient
+        <ol>
+          <li>Subitem 1</li>
+          <li>Subitem 2</li>
+          <li>Subitem 3</li>
+        </ol>
+      </li>
+      <li>Ingredient</li>
+    </ul>
+
+    <!-- sometimes order matters, use a ordered list -->
+    <ol>
+      <li>Ingredient</li>
+      <li>Ingredient
+         <ol>
+          <li>Subitem 1</li>
+          <li>Subitem 2</li>
+          <li>Subitem 3</li>
+        </ol>
+      </li>
+      <li>Ingredient</li>
+      <li>Ingredient</li>
+    </ol>
+  </body>
+</html>

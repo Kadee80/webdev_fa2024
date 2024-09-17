@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Intro CSS</title>
+    <!-- internal style sheet -->
+    <style type="text/css">
+      /* universal selector is commonly used to zero out
+      the browser default margins and padding */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* tag selectors aka type or element selectors apply to every instance of that tag on the page*/
+      div {
+        background-color: fuchsia;
+      }
+
+      p {
+        /* 1rem = 16px */
+        margin-top: 1rem;
+        border: 1px solid red;
+        padding: 2rem 1rem;
+        border-width: 1px 5px 10px 20px;
+        color: #195d23;
+        /* font-family: Helvetica, Arial, sans-serif; */
+      }
+
+      a {
+        color: #000;
+        text-decoration: none;
+        font-weight: 100;
+      }
+      /* This is a a pseudo element selector, this more specific than a tag
+      this one applies to only links that have been visited by your browser*/
+      /* a:visited {
+        color: red;
+      } */
+
+      /* class selectors always start with . inside our style sheet */
+      .silly_text {
+        font-family: cursive;
+        text-decoration: wavy underline;
+        color: cornflowerblue;
+      }
+
+      #really_important {
+        font-weight: 600;
+        font-size: x-large;
+        font-style: oblique;
+        line-height: 50px;
+        text-transform: uppercase;
+      }
+
+      span {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="silly_text">Testing 123...</div>
+    <p>
+      A p tag just to add <a href="#" class="silly_text">some spacing</a> and to
+      talk about margins and padding more...
+    </p>
+    <div>Another div</div>
+
+    <p id="really_important">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam gravida
+      arcu massa, quis ullamcorper erat imperdiet eget. Suspendisse non nulla at
+      eros tristique lacinia. Morbi id consequat ante, non sollicitudin purus.
+      Phasellus viverra quam purus, nec bibendum tortor consectetur fermentum.
+      Pellentesque malesuada neque eu mauris sollicitudin ornare. Nulla
+      fringilla laoreet enim, a placerat orci blandit vel. Ut venenatis
+      consequat neque, ac luctus nisi tristique et.
+      <span style="color: purple">Pellentesque posuere ultrices commodo.</span>
+      Nulla efficitur lectus massa, sit amet posuere erat consectetur ac. Nullam
+      faucibus, nunc at malesuada molestie, mauris velit rutrum neque, eget
+      mollis turpis eros sit amet neque. Nunc porta tellus in arcu euismod, ut
+      interdum mauris faucibus. Pellentesque vel consectetur mauris. Etiam
+      varius dapibus leo, at pulvinar quam auctor sit amet.
+    </p>
+  </body>
+</html>

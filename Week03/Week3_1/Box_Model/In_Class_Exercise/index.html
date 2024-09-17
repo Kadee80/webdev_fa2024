@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- this specifies the character set encoding.
+     without this tag our fonts might not load properly -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simple Navbar CSS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style type="text/css">
+      /* universal selector to zero out all default margins and paddings */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Roboto Condensed', sans-serif;
+      }
+
+      ul {
+        /* remove the bullet points */
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: cornflowerblue;
+      }
+
+      li {
+        /* LI display: list-item; by default. They do not want to stack next to one another
+        even though theres plenty of room to do so.
+         by telling it to display inline they stack horizontally
+         the block part, allows us to define a height, width, margin and padding */
+        display: inline-block;
+        /* We zero out the font size when we use inline block to avoid the extra calculated
+        space that inline usually inserts between letters. */
+        font-size: 0;
+        width: 200px;
+      }
+
+      /* descendant selectors, we are loooking for this exact pattern inside out html */
+      li a {
+        /* make sure the entire area is clickable, not just the text */
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        color: chartreuse;
+        text-decoration: none;
+        /* we have to explicitly define the font size here because the parent element has font size 0
+        to avoid the inline-block space issue */
+        font-size: 24px;
+      }
+
+      li a.active {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+
+      li a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#" class="active">Link 3</a></li>
+        <li><a href="#">Link 4</a></li>
+      </ul>
+    </nav>
+    <a href="#">Just to prove a point</a>
+  </body>
+</html>

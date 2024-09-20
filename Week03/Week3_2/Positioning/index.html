@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Positioning</title>
+    <style type="text/css">
+      div {
+        min-height: 100px;
+      }
+      .red {
+        background-color: red;
+      }
+
+      .green {
+        background-color: green;
+      }
+
+      .yellow {
+        background-color: yellow;
+      }
+
+      .blue {
+        background-color: blue;
+      }
+
+      .absolute {
+        position: absolute;
+      }
+
+      .relative {
+        position: relative;
+      }
+
+      .fixed {
+        position: fixed;
+      }
+
+      .top {
+        top: 0;
+      }
+
+      .bottom {
+        bottom: 0;
+      }
+
+      .left {
+        left: 0;
+      }
+
+      .right {
+        right: 0;
+      }
+
+      .top-50 {
+        top: 50px;
+      }
+
+      .right-50 {
+        right: 50px;
+      }
+
+      .bottom-50 {
+        bottom: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="red relative top-50">Relative</div>
+    <div class="green absolute top-50">
+      Absolute positioned divs look for a parent element with a defined position
+      property to position against. if it cant find one, it positions absolutely
+      to the body tag.
+    </div>
+    <div class="yellow fixed top-50">Fixed behaves similarly to absolute but will be fixed on the screen regardless of scrolling</div>
+
+    <div class="blue relative" style="width: 500px; height: 500px;">
+      <p>when we have a relative parent, absolute or fixed position child elements will position in relation to the relatively positioned parent.</p>
+    
+      <div class="red absolute top-50 right-50">absolute relative parent</div>
+      <div class="green fixed bottom-50 left-50">fixed position, same relative parent</div>
+    </div>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla
+      sem eget rhoncus imperdiet. Sed sit amet enim ac turpis mollis auctor
+      sodales eget justo. Integer et lorem tellus. In leo nisi, varius quis
+      tempor id, bibendum non justo. Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit. Cras dignissim diam eu augue vulputate porttitor. Morbi
+      neque mi, finibus sed dui feugiat, blandit commodo turpis. Aliquam
+      vehicula mauris ut libero pharetra pulvinar. Sed quis ligula elementum,
+      bibendum justo sed, tincidunt ipsum. In accumsan at velit eget varius.
+      Fusce sed odio eleifend, auctor lectus sed, pretium sapien. Fusce et elit
+      eu velit porttitor pharetra sit amet sed tortor. Curabitur feugiat
+      ullamcorper blandit. Integer eu luctus purus, id rhoncus ex.
+    </p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla
+      sem eget rhoncus imperdiet. Sed sit amet enim ac turpis mollis auctor
+      sodales eget justo. Integer et lorem tellus. In leo nisi, varius quis
+      tempor id, bibendum non justo. Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit. Cras dignissim diam eu augue vulputate porttitor. Morbi
+      neque mi, finibus sed dui feugiat, blandit commodo turpis. Aliquam
+      vehicula mauris ut libero pharetra pulvinar. Sed quis ligula elementum,
+      bibendum justo sed, tincidunt ipsum. In accumsan at velit eget varius.
+      Fusce sed odio eleifend, auctor lectus sed, pretium sapien. Fusce et elit
+      eu velit porttitor pharetra sit amet sed tortor. Curabitur feugiat
+      ullamcorper blandit. Integer eu luctus purus, id rhoncus ex.
+    </p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla
+      sem eget rhoncus imperdiet. Sed sit amet enim ac turpis mollis auctor
+      sodales eget justo. Integer et lorem tellus. In leo nisi, varius quis
+      tempor id, bibendum non justo. Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit. Cras dignissim diam eu augue vulputate porttitor. Morbi
+      neque mi, finibus sed dui feugiat, blandit commodo turpis. Aliquam
+      vehicula mauris ut libero pharetra pulvinar. Sed quis ligula elementum,
+      bibendum justo sed, tincidunt ipsum. In accumsan at velit eget varius.
+      Fusce sed odio eleifend, auctor lectus sed, pretium sapien. Fusce et elit
+      eu velit porttitor pharetra sit amet sed tortor. Curabitur feugiat
+      ullamcorper blandit. Integer eu luctus purus, id rhoncus ex.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla
+      sem eget rhoncus imperdiet. Sed sit amet enim ac turpis mollis auctor
+      sodales eget justo. Integer et lorem tellus. In leo nisi, varius quis
+      tempor id, bibendum non justo. Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit. Cras dignissim diam eu augue vulputate porttitor. Morbi
+      neque mi, finibus sed dui feugiat, blandit commodo turpis. Aliquam
+      vehicula mauris ut libero pharetra pulvinar. Sed quis ligula elementum,
+      bibendum justo sed, tincidunt ipsum. In accumsan at velit eget varius.
+      Fusce sed odio eleifend, auctor lectus sed, pretium sapien. Fusce et elit
+      eu velit porttitor pharetra sit amet sed tortor. Curabitur feugiat
+      ullamcorper blandit. Integer eu luctus purus, id rhoncus ex.
+    </p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla
+      sem eget rhoncus imperdiet. Sed sit amet enim ac turpis mollis auctor
+      sodales eget justo. Integer et lorem tellus. In leo nisi, varius quis
+      tempor id, bibendum non justo. Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit. Cras dignissim diam eu augue vulputate porttitor. Morbi
+      neque mi, finibus sed dui feugiat, blandit commodo turpis. Aliquam
+      vehicula mauris ut libero pharetra pulvinar. Sed quis ligula elementum,
+      bibendum justo sed, tincidunt ipsum. In accumsan at velit eget varius.
+      Fusce sed odio eleifend, auctor lectus sed, pretium sapien. Fusce et elit
+      eu velit porttitor pharetra sit amet sed tortor. Curabitur feugiat
+      ullamcorper blandit. Integer eu luctus purus, id rhoncus ex.
+    </p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla
+      sem eget rhoncus imperdiet. Sed sit amet enim ac turpis mollis auctor
+      sodales eget justo. Integer et lorem tellus. In leo nisi, varius quis
+      tempor id, bibendum non justo. Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit. Cras dignissim diam eu augue vulputate porttitor. Morbi
+      neque mi, finibus sed dui feugiat, blandit commodo turpis. Aliquam
+      vehicula mauris ut libero pharetra pulvinar. Sed quis ligula elementum,
+      bibendum justo sed, tincidunt ipsum. In accumsan at velit eget varius.
+      Fusce sed odio eleifend, auctor lectus sed, pretium sapien. Fusce et elit
+      eu velit porttitor pharetra sit amet sed tortor. Curabitur feugiat
+      ullamcorper blandit. Integer eu luctus purus, id rhoncus ex.
+    </p>
+  </body>
+</html>

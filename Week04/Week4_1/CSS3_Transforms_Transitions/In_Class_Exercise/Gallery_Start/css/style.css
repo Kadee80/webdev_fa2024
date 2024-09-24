@@ -20,9 +20,70 @@ body {
   font-family: 'Kaushan Script', cursive;
 }
 
+/* NAVIGATION */
+
+header {
+  width: 80%;
+  padding: 0 10%;
+  height: 50px;
+  overflow-y: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-bottom: 10px;
+  /* increase z index to pull items forward */
+  z-index: 10;
+  background-color: gray;
+  /* flexbox properties */
+  /* flexbox container property */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: url('../img/carbon_fibre.png');
+}
+
+header h1 {
+  color: #ccc;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  text-align: center;
+  background-color: rgba(140, 140, 140, 0.1);
+}
+
+nav li {
+  font-size: 18px;
+  height: 50px;
+  line-height: 50px;
+  width: 120px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ccc;
+  display: block;
+  /* We always define our transition on the initial style */
+  transition: all 1s;
+}
+
+nav a:hover {
+  /* These properties will animate because of the transition above */
+  background-color: #eee;
+  color: black;
+}
+
+nav a.active {
+  background-color: white;
+  color: red;
+}
+
+/* GALLERY */
 .container {
   width: 900px;
-  margin: 0 auto;
+  margin: 100px auto;
   /* when we use inline block
   to stack things we have to zero out
   the font size on the container element */
@@ -56,4 +117,82 @@ then give the parent a width and height */
   width: 280px;
   text-align: center;
   color: #333;
+}
+
+/* TRANSFORMS */
+.scaleUp {
+  transform: scale(1.5);
+  z-index: 10;
+}
+
+.scaleX {
+  /* transform: scaleX(2); */
+  z-index: 10;
+  transform: scale(2, 1);
+}
+
+.scaleY {
+  transform: scale(1, 2);
+}
+
+.skewX {
+  transform: skewX(-20deg);
+}
+
+.skewY {
+  transform: skewY(-20deg);
+}
+
+.skewBoth {
+  transform: skew(10deg, 30deg);
+}
+
+.rotX {
+  transform: rotateX(180deg);
+}
+
+.rotY {
+  transform: rotateY(180deg);
+}
+
+.rotZ {
+  transform: rotateZ(120deg);
+}
+
+.rotateLeft {
+  transform: rotate(-20deg);
+  transition: all 5s ease-in-out;
+}
+
+.rotateLeft:hover {
+  transform: rotate(20deg);
+  cursor: pointer;
+}
+
+.skewHover {
+  transform: skewX(-30deg);
+  transition: all 5s ease;
+}
+
+.skewHover:hover {
+  transform: skewX(30deg);
+}
+
+.scaleHover {
+  transform: scale(0.5);
+  transition: all 5s ease-in;
+}
+
+.scaleHover:hover {
+  transform: scale(1.5);
+}
+
+.colorSwap {
+  filter: grayscale(100%);
+  transition: all 2s ease-out;
+}
+
+.colorSwap:hover {
+  filter: grayscale(0);
+  cursor: pointer;
 }

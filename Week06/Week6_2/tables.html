@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tables</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 300px;
+      }
+      th,
+      td {
+        border-bottom: 2px solid gray;
+        width: 33%;
+        text-align: center;
+      }
+
+      td {
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+      }
+
+      td:first-child {
+        border-left: none;
+      }
+
+      td:last-child {
+        border-right: none;
+      }
+
+      .last-row td {
+        border-bottom: none;
+      }
+
+      tr:nth-child(even) {
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- wraps all things tabley -->
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Major</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tony</td>
+          <td>54</td>
+          <td>Kickin Ass</td>
+        </tr>
+
+        <tr>
+          <td>Mary</td>
+          <td>21</td>
+          <td>Dolphins</td>
+        </tr>
+        <tr>
+          <td>Tony</td>
+          <td>54</td>
+          <td>Kickin Ass</td>
+        </tr>
+
+        <tr>
+          <td>Mary</td>
+          <td>21</td>
+          <td>Dolphins</td>
+        </tr>
+        <tr>
+          <td>Tony</td>
+          <td>54</td>
+          <td>Kickin Ass</td>
+        </tr>
+
+        <tr class="last-row">
+          <td>Mary</td>
+          <td>21</td>
+          <td>Dolphins</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

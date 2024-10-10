@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Modal</title>
+    <style type="text/css">
+      a.button {
+        text-decoration: none;
+        color: white;
+        background-color: blueviolet;
+        padding: 1rem 2rem;
+        border-radius: 0.25rem;
+        margin-right: 1rem;
+      }
+
+      /* Modal Styles */
+      .overlay {
+        /* stretch the overlay div to cover the entire screen */
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        /* transparent bg color */
+        background-color: rgba(0, 0, 0, 0.3);
+        /* make sure our modal shows up in front of everything else on screen */
+        z-index: 9999;
+        /* starting state opacity of 0% */
+        opacity: 0%;
+        /* we always define our transition on the starting state */
+        transition: opacity 400ms ease-in;
+        /* our  modal is there, just 0% opacity, we dont want to be able to click on
+        anything in the invisiable modal */
+        pointer-events: none;
+      }
+
+      .overlay:target {
+        opacity: 1;
+        /* re-allow all pointer events */
+        pointer-events: auto;
+      }
+
+      .overlay > div {
+        width: 300px;
+        height: 300px;
+        background-color: white;
+        position: relative;
+        margin: 10% auto;
+        padding: 2rem;
+        border-radius: 10px;
+      }
+
+      .close {
+        height: 20px;
+        width: 20px;
+        background-color: white;
+        color: black;
+        /* position the close button on top right corner */
+        position: absolute;
+        top: 0;
+        right: 0;
+        text-align: center;
+        text-decoration: none;
+        transition: all 1s ease;
+        border-top-right-radius: 10px;
+      }
+
+      .close:hover {
+        background-color: black;
+        color: white;
+      }
+
+      .button_bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding: 2rem 1rem;
+      }
+
+      .scrollable {
+        height: 200px;
+        overflow-y: scroll;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello Modals!</h1>
+    <a href="#info" class="button">Link to Modal 1</a>
+    <a href="#info2" class="button">Link to Modal 2</a>
+
+    <!-- Modal 1 -->
+    <!-- parent/wrapper div it recives the ID, and will be our transparent overlay -->
+    <div id="info" class="overlay">
+      <!-- this child div is the modal box itself -->
+      <div>
+        <!-- close button, absolutley positioned to top right corner -->
+        <a href="#close" class="close">X</a>
+        <!-- you can put whatever HTML elements you need to inside the modal inner div -->
+        <h2>Title of the modal 1</h2>
+        <div class="scrollable">
+          <p>Look at me! I am modal number 1</p>
+          <p>This modal has scrollable content</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+            elit turpis, cursus a posuere vitae, interdum nec leo. Mauris
+            venenatis felis nec ultrices ultrices. Ut quis condimentum quam, at
+            vestibulum velit. Sed vehicula cursus diam in tincidunt. Vivamus id
+            vehicula metus. Sed vehicula feugiat neque, et sagittis magna
+            vestibulum pretium. Maecenas nec elementum neque, eget mattis eros.
+            Morbi suscipit eleifend facilisis. In nec neque id urna efficitur
+            rhoncus eu ac magna. Vestibulum quis lorem orci. Nulla tincidunt
+            odio nec ligula egestas imperdiet.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- END Modal 1 -->
+
+    <!-- Modal 2 -->
+    <!-- parent/wrapper div it recives the ID, and will be our transparent overlay -->
+    <div id="info2" class="overlay">
+      <!-- this child div is the modal box itself -->
+      <div>
+        <!-- close button, absolutley positioned to top right corner -->
+        <a href="#close" class="close">X</a>
+        <!-- you can put whatever HTML elements you need to inside the modal inner div -->
+        <h2>Title of the modal 2</h2>
+        <p>Look at me! I am modal number 2</p>
+        <div class="button_bar">
+          <a href="#close" class="button">Accept</a>
+          <a href="#close" class="button">Decline</a>
+        </div>
+      </div>
+    </div>
+    <!-- END Modal 2 -->
+  </body>
+</html>

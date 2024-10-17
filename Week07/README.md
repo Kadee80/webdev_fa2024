@@ -1,6 +1,6 @@
 # HW Week07: Due Tuesday Week08
 
-Complete your midterm projects. You will be presenting Thursday of March 14. Please be sure to document your project with either a slideshow or a markdown file inside your class repo. Be sure to include:
+Complete your midterm projects. You will be presenting Tuesday October 22. Please be sure to document your project with either a slideshow or a markdown file inside your class repo. Be sure to include:
 
 - A demo of the site and the progress you have made
 - A snippet of code you figured out (perhaps a tutorial you found or some responsive behavior you figured out)

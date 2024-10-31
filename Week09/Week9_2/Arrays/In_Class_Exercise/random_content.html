@@ -4,6 +4,54 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Random Content (math + arrays)</title>
+    <script type="text/javascript">
+      // make an array of image sources to choose from at random when the page loads
+      var arrImg = [
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hausziege_04.jpg/440px-Hausziege_04.jpg',
+        'https://media.npr.org/assets/img/2014/12/14/ap798386886673_custom-874f02be53ae33c23d21b505066e52895eab4651.jpg?s=1600&c=85&f=webp',
+        'https://media.4-paws.org/2/2/7/d/227da55e9646ed9096cbc309ea33d05ec53ec2f3/VIER%20PFOTEN_2013-07-19_024-3851x2665-1920x1329.webp',
+      ]
+
+      // random links to correspond to each image
+      var arrLinks = [
+        'https://en.wikipedia.org/wiki/Goat',
+        'https://www.npr.org/sections/goatsandsoda/2014/12/05/368772449/how-can-you-tell-if-your-goat-is-happy-now-we-know',
+        'https://www.four-paws.org/campaigns-topics/topics/farm-animals/10-amazing-facts-about-goats',
+      ]
+
+      // helper function for picking a random number between 0 and max
+      function randomIndex(max) {
+        return Math.floor(Math.random() * max)
+      }
+
+      // write our own random image function outside of our event listeners
+      // remember not to call this function until the DOM loads
+      function loadRandomImage() {
+        var index = randomIndex(arrImg.length)
+        var img = document.getElementById('animal')
+        var link = document.getElementById('dynLink')
+
+        // assign the src attribute of the image element to a string stored in a random index slot in our image array
+        img.src = arrImg[index]
+        // assign the href from our links array and random index
+        link.href = arrLinks[index]
+      }
+
+      // loadRandomImage()
+      /*
+      // wait for the page to finish loading the body content before we try and store any elements as JS variables
+      document.addEventListener('DOMContentLoaded', function () {
+        // assign elements to variables,
+        // call functions we want to run on load
+        // add event listeners to elements like buttons on our page
+        loadRandomImage()
+      })
+      */
+
+      document.addEventListener('DOMContentLoaded', loadRandomImage)
+    </script>
   </head>
-  <body></body>
+  <body>
+    <a href="#" id="dynLink" target="_blank"><img src="" id="animal" /></a>
+  </body>
 </html>

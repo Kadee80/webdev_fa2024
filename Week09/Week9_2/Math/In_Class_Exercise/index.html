@@ -4,6 +4,94 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>JS Math Methods</title>
+    <script type="text/javascript">
+      // integers = whole numbers
+      const x = 15
+      const y = 35
+      let z
+      z = 10.5 // float
+
+      // addition +
+      console.log(x + y)
+      // subtraction -
+      console.log(x - y)
+      // multiplication *
+      console.log(x * y)
+      // division /
+      console.log(x / y)
+
+      // modular operator % returns the division remainder
+      // this is really helpful when we want to use odd or even or every nth number
+      console.log(10 % 3)
+
+      // just like algebra, order of operations matter
+      console.log((x + y) * (y - 1))
+
+      // increments
+      // x++
+
+      // decrement
+      // x--
+
+      // increment by a certain number
+      // x +=2
+
+      // decrement by a certain number
+      // x--
+
+      // floating point numbers and some basic math methods
+      var k = 2.25
+      // Math.floor(num) will ALWAYS round down
+      console.log('floor k result = ', Math.floor(k))
+
+      // Math.ceil(num) will ALWAY round up
+      console.log('ceil k result = ', Math.ceil(k))
+
+      // Math.round(num) will round up or down based on the decimal value
+      var num1 = 2.2
+      var num2 = 2.7
+      console.log('round num1 result = ', Math.round(num1))
+      console.log('round num2 result = ', Math.round(num2))
+
+      // Math.random() returns a floating point number BETWEEN 0 and 1
+      console.log(Math.random())
+
+      // We can use Math.random() in combination with Math.round() to get the whole number 0 or 1
+      // for a true/false boolean sitation
+
+      var yn = Math.round(Math.random()) // return 0 or 1
+      console.log(yn)
+
+      if (yn === 0) {
+        console.log('false')
+      } else {
+        console.log('true')
+      }
+
+      // Random number between 0 and n
+      function randNum(max) {
+        // when we declare a variable inside a function
+        // it is scoped. aka not accessible outside of this function
+        var rn = Math.round(max * Math.random())
+        //  console.log(rn)
+        return rn
+      }
+      // this helper funciton is super helpful when you need to pull a random index out of an array
+      var q = randNum(34)
+      console.log(q)
+
+      // test is a global variable but it gets a value assigned when we call a function
+      var test
+
+      function randNumRange(min, max) {
+        return Math.round(Math.random() * (max - min) + min)
+      }
+
+      var rand1 = randNumRange(20, 30)
+      var rand2 = randNumRange(55, 177)
+
+      console.log(rand1, rand2)
+    </script>
   </head>
   <body></body>
 </html>

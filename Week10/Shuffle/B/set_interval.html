@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>User Input Simple</title>
+    <script>
+      let counter = 0
+
+      // a funciton to call every x seconds or whatever
+      function intervalTest() {
+        let p = document.getElementById('timeElapsed')
+        p.innerHTML = counter
+        counter += 5
+      }
+
+      // call a function directly on the browser window,
+      // and use setInterval to say how often we want it to fire
+      window.setInterval(intervalTest, 500)
+
+      // take a look at clearInterval() in w3 schools or MDN, how could we make it stop counting when the counter reaches 50?
+    </script>
+  </head>
+  <body>
+    <p id="timeElapsed">
+      this will go away once the function overrides innerhtml
+    </p>
+  </body>
+</html>

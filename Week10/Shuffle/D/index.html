@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shuffle</title>
+    <script>
+      let students = [
+        'Cindy',
+        'Katie',
+        'Albert',
+        'Mike',
+        'Lee',
+        'David',
+        'Robert',
+        'Paul',
+        'Mary',
+        'Ryan',
+        'Tiffany',
+        'Alice',
+        'Dorothy',
+      ]
+
+      function listStudents() {
+        // grab our content div
+        let content = document.getElementById('content')
+        // create an ordered lsit to store our students
+        let ol = document.createElement('OL')
+        // add the OL tag to our content div
+        content.appendChild(ol)
+
+        // loop through our student array
+        for (let i = 0; i < students.length; i++) {
+          // create a list item element
+          let li = document.createElement('LI')
+          // grab the name of the student at slot i in our array
+          let t = students[i]
+          // pass that name into a text node
+          let text = document.createTextNode(t)
+          // add the textnode to the li
+          li.appendChild(text)
+          // add the li to the ol
+          ol.appendChild(li)
+        }
+      }
+
+      // sorts the students alphabetically
+      function sortStudents() {
+        // gee this might be a good js hw place to look?
+        students.sort()
+        console.log(students)
+      }
+
+      // random number between 0 and n
+      function randomNumber(n) {
+        return Math.floor(Math.random() * n)
+      }
+
+      function shuffleStudents() {
+        // looping backwards through our student array
+        for (let i = students.length - 1; i >= 0; i--) {
+          // get a random number between 0 and the array length
+          let randomIndex = Math.floor(Math.random() * (i + 1))
+
+          //grab the item at the random index and store it in a variable
+          let itemAtIndex = students[randomIndex]
+
+          // swap the itemAtIndex and the item at students[i]
+          students[randomIndex] = students[i]
+
+          // set the random index to the value at i
+          students[i] = itemAtIndex
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="listStudents()">List Students</button>
+    <button onclick="sortStudents()">Sort Students</button>
+    <button onclick="shuffleStudents()">Shuffle Students</button>
+
+    <div id="content"></div>
+  </body>
+</html>

@@ -4,6 +4,83 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Student Shuffle</title>
+    <script type="text/javascript">
+      const students = [
+        'Katie',
+        'Cindy',
+        'Joseph',
+        'John',
+        'Jhon',
+        'Nicholas',
+        'Eddie',
+        'Will',
+        'Yida',
+      ]
+
+      document.addEventListener('DOMContentLoaded', function () {
+        // this is where you assign html elements to js variables
+        // this is also where you add event listeners
+        // and any other code you want to fire off the second the page has fully loaded
+        document.getElementById('list').addEventListener('click', listStudents)
+        document.getElementById('sort').addEventListener('click', sortStudents)
+        document
+          .getElementById('shuffle')
+          .addEventListener('click', shuffleStudents)
+      })
+
+      function listStudents() {
+        // console.log('listing students')
+        // grab our content div by ID and store it as a local variable (scoped)
+        const content = document.getElementById('content')
+        // create an ordered list node to store our student
+        const ol = document.createElement('OL')
+        // add the ol to our content div
+        content.appendChild(ol)
+        console.log(content)
+
+        //loop through our student array
+        for (var i = 0; i < students.length; i++) {
+          //create a list item
+          const li = document.createElement('LI')
+          // grab the student name in our array at slot[i]
+          const stu = students[i]
+          const text = document.createTextNode(stu)
+          // add the text node to the li element
+          li.appendChild(text)
+          // add the LI to our OL
+          ol.appendChild(li)
+        }
+      }
+
+      function sortStudents() {
+        // Array.sort() by default will sort alphabetically if possible
+        students.sort()
+        listStudents()
+      }
+
+      // same as arraow function below: function shuffleStudents() {}
+      const shuffleStudents = () => {
+        for (var i = 0; i < students.length; i++) {
+          // get a random number between 0 and whatever var i is this time in our loop
+          // const randomIndex = Math.floor(Math.random() * (i + 1))
+          // get a random index within the range of the entire array
+          const randomIndex = Math.floor(Math.random() * (students.length - 1))
+          // place the item at that random index inside a variable
+          const itemAtIndex = students[randomIndex]
+          // swap the random item and the item at slot[i]
+          students[randomIndex] = students[i]
+          // set the value of studenmt at slot i to the item at the random index
+          students[i] = itemAtIndex
+        }
+        listStudents()
+      }
+    </script>
   </head>
-  <body></body>
+  <body>
+    <button id="list">List Students</button>
+    <button id="sort">Sort Students</button>
+    <button id="shuffle">Shuffle Students</button>
+
+    <div id="content"></div>
+  </body>
 </html>

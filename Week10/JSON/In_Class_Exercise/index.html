@@ -4,6 +4,40 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>JS Objects</title>
+    <script type="text/javascript">
+      var someVar = 'firstName'
+
+      const customer = {
+        firstName: 'Tony',
+        lastName: 'Pony',
+        pets: ['dog', 'cat', 'iguana'],
+      }
+
+      console.log(customer.pets[1]) // logs cat
+
+      const pets = ['dog', 'cat', 'iguana']
+      console.log(pets[1]) // logs cat
+
+      // access the customers first name propertywith dot notation
+      console.log(customer.firstName) // Tony
+      // customers last name?
+      console.log(customer.lastName)
+      console.log(customer[someVar])
+      // tony's first pet?
+      console.log(customer.pets[0])
+      // all of tony's pets
+      for (var i = 0; i < customer.pets.length; i++) {
+        console.log(customer.pets[i])
+      }
+      // we can add new properties at anytime to an existing object using dot notation
+      customer.age = 45
+      console.log(customer)
+      // we can change/reassign new values to existing keys using dot notation
+      customer.isMarried = false
+      customer.isMarried = true
+
+      console.log(customer)
+    </script>
   </head>
   <body></body>
 </html>

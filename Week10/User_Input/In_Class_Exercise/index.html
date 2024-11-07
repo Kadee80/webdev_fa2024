@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>User Input Simple</title>
+    <style type="text/css">
+      h1 {
+        text-transform: uppercase;
+      }
+
+      .red {
+        color: red;
+      }
+
+      .green {
+        color: green;
+      }
+
+      .blue {
+        color: blue;
+      }
+
+      .purple {
+        color: purple;
+      }
+    </style>
+    <script>
+      // Write a function that changes the color of the h1 element based on the number a user picks
+      // Make sure we wait for the DOM to load before trying to get anything by ID
+      // or Add any additional event listeners
+
+      document.addEventListener('DOMContentLoaded', function () {
+        // assign html elements to variables
+        // add event listeners to HTML elements
+        // document.getElementById('changeBtn').addEventListener('click', pickAClass)
+        const myBtn = document.getElementById('changeBtn')
+        myBtn.addEventListener('click', pickAClass)
+      })
+
+      function pickAClass() {
+        // grab our user number input
+        const userN = document.getElementById('num')
+        // oh snap! its a string!
+        console.log(typeof userN.value)
+        // but we dont want a string, we want a integer!
+        const n = parseInt(userN.value)
+        console.log(typeof n)
+
+        // grab our h1 element and store it as a var
+        const h = document.getElementById('changeMe')
+
+        // rather than having a laundry list of conditional statements, lets use a Switch
+
+        switch (n) {
+          case 0:
+            h.className = 'red'
+            break
+          case 1:
+            h.className = 'green'
+            break
+          case 2:
+            h.className = 'blue'
+            break
+          case 3:
+            h.className = 'purple'
+            break
+          default:
+            // this is where you put the none of the above option
+            // you may never hit this case, but you need to define it
+            break
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1 id="changeMe">Get User Input Simple</h1>
+
+    <form>
+      <fieldset>
+        <legend>Pick a number between 0 and 3</legend>
+        <label for="num">0-3</label>
+        <input
+          type="number"
+          name="num"
+          id="num"
+          min="0"
+          max="3"
+          step="1"
+          placeholder="1"
+        />
+        <button type="button" id="changeBtn" class="btnClass">
+          Click to change the color class of h1
+        </button>
+      </fieldset>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Local Storage</title>
+  </head>
+  <body>
+    <h1>Hello <span id="user">World</span></h1>
+
+    <form id="userInfo">
+      <label for="firstName">What's your name?</label>
+      <input type="text" name="firstName" id="firstName" required />
+      <button type="submit" id="nameBtn">Submit!</button>
+    </form>
+
+    <button id="clearBtn">Clear Current User</button>
+
+    <script>
+      // set user name based on form input
+      const saveUser = () => {
+        const name = document.getElementById('firstName').value
+        console.log(name)
+        localStorage.firstName = name
+        localStorage.bagOfSpiders = true
+      }
+
+      // a function to clear out local storage
+      const clearLocalStorage = () => {
+        // empty local storage for this URL
+        localStorage.clear()
+        // after we clear the storage we want to refresh the page so we can see that happened
+        window.location.reload()
+      }
+
+      // DOM Loaded listner to apply other event listeners
+      document.addEventListener('DOMContentLoaded', () => {
+        document
+          .getElementById('nameBtn')
+          .addEventListener('click', (event) => {
+            // event.preventDefault()
+            saveUser()
+          })
+
+        // check if the key firstName exists already in locaStorage
+
+        if (localStorage.firstName) {
+          // use that value to replace 'World' span with the name value
+          document.getElementById('user').innerHTML = localStorage.firstName
+          console.log(localStorage.bagOfSpiders)
+        } else {
+          console.log('Fill out the form to populate firstName field')
+        }
+
+        const btnClear = document.getElementById('clearBtn')
+        btnClear.addEventListener('click', clearLocalStorage)
+      })
+    </script>
+  </body>
+</html>

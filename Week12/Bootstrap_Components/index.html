@@ -12,7 +12,166 @@
     />
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <h1>More Components and Utility Classes</h1>
+
+    <!-- Misc Utility Classes -->
+    <div class="container mt-5">
+      <div
+        class="p-3 bg-warning-subtle text-success border border-5 border-danger rounded-4"
+      >
+        Example element with a bunch of util classes
+      </div>
+      <button
+        type="button"
+        class="mt-5 btn btn-outline-info btn-lg border-3"
+        data-bs-toggle="modal"
+        data-bs-target="#wizard"
+      >
+        Open Step Wizard
+      </button>
+
+      <!-- Chained multiple modals with scrollable inner content and a static BG (you cant accidentally click out) -->
+      <!-- Modal 1 -->
+      <div
+        class="modal fade"
+        id="wizard"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="wizardLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+          <div class="modal-content border-danger rounded-4">
+            <div class="modal-header">
+              <h1 class="modal-title" id="wizardLabel">Step 1 Tutorial</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                id eros efficitur, luctus lacus faucibus, finibus purus. Aenean
+                vitae mi vulputate, vulputate est at, efficitur nisl. Donec
+                mollis, mi a venenatis lobortis, odio elit tempor massa, et
+                accumsan quam odio sit amet est. Ut dapibus justo a cursus
+                vestibulum. Donec convallis sed urna ut luctus. Proin ac orci
+                sit amet lacus laoreet tempor. Duis a cursus purus, nec congue
+                nunc. Aliquam elementum interdum massa sit amet faucibus. Proin
+                vel rutrum augue, ac sagittis ligula. Curabitur iaculis blandit
+                aliquam. Vestibulum sapien est, vehicula at urna non, aliquet
+                rhoncus sem. Aliquam erat volutpat. Integer eu lacus odio.
+                Pellentesque sed sapien pretium magna tincidunt aliquet.
+                Phasellus non egestas nibh, in eleifend ex. Donec faucibus
+                scelerisque nulla, hendrerit gravida tortor scelerisque
+                vestibulum. Curabitur eget mi nunc. Nunc pulvinar pulvinar nisi,
+                eget semper eros efficitur et. Phasellus libero dolor,
+                condimentum at congue quis, semper ac turpis. Phasellus eu
+                pretium tortor, at lobortis urna. Sed ultricies sagittis lectus,
+                a mattis ex interdum ac. Vivamus in purus quis libero aliquam
+                molestie non rutrum nunc. Etiam a massa nulla. Suspendisse quis
+                mauris tellus. Mauris eu mauris neque. Sed laoreet aliquam
+                risus, sed accumsan turpis consequat ac. Nulla vitae velit at
+                turpis viverra iaculis. Suspendisse venenatis magna ut tellus
+                fringilla finibus. Aenean faucibus convallis odio, nec vulputate
+                enim egestas a. Fusce finibus, eros eu luctus viverra, lorem
+                augue rutrum nunc, a faucibus orci enim tempor nisl. Aliquam
+                erat volutpat. Proin faucibus ex elit, quis eleifend tortor
+                venenatis ut. Curabitur vel convallis sapien, non consectetur
+                enim. Ut auctor est a dui pharetra convallis. Duis ut elementum
+                erat. Morbi mattis sapien tortor, at porta urna cursus suscipit.
+                Vivamus bibendum dolor quis nunc molestie sagittis. Morbi
+                pellentesque mauris justo, a euismod lectus varius vitae.
+                Aliquam erat volutpat. Maecenas nec mattis quam, at rhoncus mi.
+              </p>
+              <p>
+                This is the part that becomes scrollable if the content is
+                taller than the modal.
+              </p>
+              <p>
+                You can put anything in here. A carousel, an embedded video,
+                scrollable content, bs grid system.
+              </p>
+              <p>Click next to proceed to step 2</p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Exit Tutorial
+              </button>
+              <button
+                type="button"
+                class="btn btn-success"
+                data-bs-toggle="modal"
+                data-bs-target="#wizard2"
+              >
+                Next Step
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Modal 1 -->
+
+      <!-- Modal 2 -->
+      <div
+        class="modal fade"
+        id="wizard2"
+        tabindex="-1"
+        aria-labelledby="wizardLabel2"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+          <div class="modal-content border-danger rounded-4">
+            <div class="modal-header">
+              <h1 class="modal-title fs-3" id="wizardLabel2">
+                Step 2 Tutorial
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p>
+                This is the part that becomes scrollable if the content is
+                taller than the modal.
+              </p>
+              <p>This is step 2.</p>
+              <p>Click back to go back to step 1</p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-success"
+                data-bs-toggle="modal"
+                data-bs-target="#wizard"
+              >
+                Previous Step
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Exit Tutorial
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Modal 2 -->
+    </div>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

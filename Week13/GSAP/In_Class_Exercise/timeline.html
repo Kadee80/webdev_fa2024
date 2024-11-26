@@ -2,16 +2,81 @@
 <html>
   <head>
     <title>Simple Timeline</title>
-    <style type="text/css" media="screen"></style>
+    <style type="text/css" media="screen">
+      body {
+        text-align: center;
+      }
+
+      .progress {
+        position: relative;
+        z-index: 5;
+        width: 100%;
+        height: 1rem;
+        background-color: black;
+      }
+
+      h2,
+      p {
+        text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+        position: relative;
+      }
+    </style>
   </head>
 
   <body>
+    <div class="progress"></div>
+
+    <div id="page-wrap">
+      <h2>Hello Green Sock!</h2>
+      <h2>You're Awesome!</h2>
+      <p id="description">
+        I just made my first timeline and thats pretty cool!
+      </p>
+    </div>
+
     <!--
       Older free without subscription versions
       https://github.com/greensock/GSAP
     -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.11.5/dist/gsap.min.js"></script>
     <!-- Our Script using GSAP Library Functions -->
-    <script type="text/javascript"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', () => {
+        // grab each element and store them as variables
+        const headers = document.getElementsByTagName('H2')
+        const hello = headers[0]
+        const awesome = headers[1]
+        const text = document.getElementById('description')
+        const progress = document.querySelector('.progress')
+        // querySelector grabs the FIRST element it finds on the page that matches the selector passed in
+        // IF we wanted all of the elements with that selector we use document.querySelectorAll()
+        // rememeber when we use any version of query Selector we need to pass in # or . inside the quotes
+        const bg = document.querySelector('#page-wrap')
+
+        // create a new empty timeline object to store and group our animations
+        const tl = new TimelineLite()
+
+        // now we can add our different animations to the timeline
+        // inside a timeline each animation happens one after the next in the order which you add them to your timeline
+        tl.from(bg, 0.85, {opacity: 0})
+          .from(hello, 0.75, {
+            left: -900,
+            opacity: 0,
+          })
+          .from(awesome, 1.5, {right: -900, opacity: 0})
+          .from(text, 1.0, {bottom: -1000, opacity: 0})
+          .from(
+            progress,
+            tl.duration(),
+            {
+              scaleX: 0,
+              transformOrigin: 'left',
+              ease: 'none',
+            },
+            0
+          ) // fourth argument is start time within timeline. instead of it happening at the end , we want it at second 0
+          .to(progress, 0.2, {opacity: 0, top: -20})
+      })
+    </script>
   </body>
 </html>

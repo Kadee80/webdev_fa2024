@@ -5,9 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Hello GSAP Tweens</title>
 
-    <style type="text/css" media="screen"></style>
+    <style type="text/css" media="screen">
+      #sb {
+        position: absolute;
+        top: 700px;
+        left: 0;
+      }
+    </style>
   </head>
   <body>
+    <!-- Kick the soccer ball -->
+    <img src="./img/soccer-ball.png" id="sb" />
+    <!-- 5 basketballs to bounce -->
+    <img src="./img/basket-ball.png" class="bball" />
+    <img src="./img/basket-ball.png" class="bball" />
+    <img src="./img/basket-ball.png" class="bball" />
+    <img src="./img/basket-ball.png" class="bball" />
+    <img src="./img/basket-ball.png" class="bball" />
     <!-- Load GSAP core library at the bottom of our body tag -->
     <!--
       Older free without subscription versions
@@ -15,6 +29,50 @@
     -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <!-- Our Script using GSAP Library Functions -->
-    <script type="text/javascript"></script>
+    <script type="text/javascript">
+      // grab and store our soccer ball in js so we can 'kick it'
+      // const sb = document.getElementById('sb')
+      // another way to do this which is similar to how green sock selects elements
+      const sb = document.querySelector('#sb')
+
+      // use GSAP tween class to animate the soccer ball's position
+      // rotate and scale the sb over time
+      // remember when we use gsap.to() or gsap.from() without any other GSAP code
+      // all animations will want to fire as soon as the page loads
+      // gsap.to({elementToAnimate}, {optionalDurationOfAnimation}, {optionsObjectWith CSS properties to change})
+      gsap.to(sb, 2, {
+        // duration: 2,
+        x: 1000, // to the right
+        y: -700, // up 500px
+        rotation: 720,
+        scale: 0.5,
+        delay: 1,
+        ease: 'elastic.out',
+      })
+      // 3 seconds total animation time
+
+      // use QuerySelector inline to select all of the images with the class .bball
+      gsap.to('.bball', 1, {
+        y: 500,
+        rotation: 360,
+        delay: 3,
+        ease: 'bounce.out',
+        stagger: {
+          each: 0.5,
+        },
+      })
+
+      // we can also tell green sock to fire a callback function
+      // const imDone = () => {}
+      function imDone() {
+        alert("I'm done.")
+      }
+
+      gsap.to('#sb, .bball', 5, {
+        opacity: 0,
+        delay: 10,
+        onComplete: imDone,
+      })
+    </script>
   </body>
 </html>

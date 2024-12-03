@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ITP Innovation Lab | Exhibits, Museums and Public Spaces</title>
+    <link
+      href="http://fonts.googleapis.com/css?family=Muli:300,400"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+    <script
+      type="text/javascript"
+      src="js/jquery/jquery-1.10.1.min.js"
+    ></script>
+    <script type="text/javascript" src="js/utils/SplitText.js"></script>
+    <script type="text/javascript" src="js/TweenMax.js"></script>
+    <script type="text/javascript" src="js/TimelineMax.js"></script>
+    <script type="text/javascript" src="js/plugins/CSSPlugin.js"></script>
+    <script type="text/javascript" src="js/easing/EasePack.js"></script>
+    <style>
+      body {
+        overflow-x: hidden;
+      }
+      #container {
+        width: 960px;
+        height: 600px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .center {
+        width: 960px;
+        position: absolute;
+        top: 5%;
+
+        text-align: center;
+      }
+
+      #text {
+        position: absolute;
+        bottom: 40%;
+        left: 0;
+        text-align: left;
+        padding: 0px;
+        z-index: 1000;
+        width: 100%;
+        font-family: 'Muli', sans-serif;
+        background: rgba(255, 137, 59, 0.9);
+        -webkit-box-shadow: 0px 5px 10px 1px rgba(110, 109, 110, 0.25);
+        -moz-box-shadow: 0px 5px 10px 1px rgba(110, 109, 110, 0.25);
+        box-shadow: 0px 5px 10px 1px rgba(110, 109, 110, 0.25);
+      }
+
+      h1 {
+        color: #fff;
+        padding: 5px;
+        padding-left: 20px;
+        width: 100%;
+        font-weight: 400;
+        font-size: 30px;
+      }
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      .learnmore {
+        position: absolute;
+        z-index: 1000;
+        font-family: 'Muli', sans-serif;
+        right: 15%;
+        bottom: 12%;
+      }
+
+      #logo {
+        width: 250px;
+        float: left;
+        padding: 20px;
+        border-right: 1px solid rgba(255, 255, 255, 0.5);
+      }
+
+      #bar {
+        width: 500px;
+        float: left;
+      }
+    </style>
+
+    <script>
+      $(document).ready(function () {
+        banner = $('#text')
+        tagline = $('.tagline')
+        more = $('.learnmore')
+        frames = $('.frame')
+
+        intro = new TimelineMax({delay: 0.5, repeat: 0})
+        intro.from(banner, 0.5, {x: -1600}, 0.5)
+
+        intro.from(more, 0.5, {delay: 1.5, x: 600}, '+=0.5')
+        tl = new TimelineMax({delay: 0, repeat: -1})
+        tl.add('slide', '+=5')
+        tl.add('slide2', '+=9')
+        tl.add('slide3', '+=12')
+        tl.add('slide4', '+=15')
+        tl.add('slide5', '+=18')
+        tl.add('slide6', '+=21')
+        tl.add('slide7', '+=24')
+        tl.add('slide8', '+=27')
+        tl.add('end', '+=29')
+
+        $('.frame').each(function (index) {
+          tl.fromTo(
+            this,
+            0.4 + Math.random() * 0.5,
+            {
+              x: randomInteger(-400, 400),
+              y: randomInteger(-300, 300),
+              autoAlpha: 0,
+            },
+            {
+              force3D: true,
+              rotation: randomInteger(-60, 60),
+              y: randomInteger(350, 650),
+              x: randomInteger(-400, 400),
+              autoAlpha: 1,
+              ease: Power2.easeOut,
+            },
+            Math.random() * 0.5
+          )
+        })
+
+        $('.one').each(function (index) {
+          tl.to(
+            this,
+            0.5,
+            {
+              delay: 0.5,
+              rotation: randomInteger(-6, 10),
+              x: randomInteger(-2, 2),
+              y: randomInteger(-4, 4),
+            },
+            'sentence+=' + index * 0.3
+          )
+        })
+        $('.one').each(function (index) {
+          tl.to(
+            this,
+            0.4 + Math.random() * 0.5,
+            {
+              rotation: randomInteger(-60, 60),
+              y: randomInteger(200, 500),
+              x: randomInteger(-480, 480),
+              ease: Power2.easeOut,
+            },
+            'slide+=' + Math.random() * 0.5
+          )
+        })
+        $('.two').each(function (index) {
+          tl.to(
+            this,
+            0.5,
+            {
+              rotation: randomInteger(-6, 10),
+              x: randomInteger(-2, 2),
+              y: randomInteger(-4, 4),
+            },
+            'sentence2+=' + index * 0.3
+          )
+        })
+        $('.two').each(function (index) {
+          tl.to(
+            this,
+            0.4 + Math.random() * 0.5,
+            {
+              rotation: randomInteger(-60, 60),
+              y: randomInteger(200, 500),
+              x: randomInteger(-480, 480),
+              ease: Power2.easeOut,
+            },
+            'slide2+=' + Math.random() * 0.5
+          )
+        })
+        $('.three').each(function (index) {
+          tl.to(
+            this,
+            0.5,
+            {
+              rotation: randomInteger(-6, 10),
+              x: randomInteger(-2, 2),
+              y: randomInteger(-4, 4),
+            },
+            'sentence3+=' + index * 0.3
+          )
+        })
+        $('.three').each(function (index) {
+          tl.to(
+            this,
+            0.4 + Math.random() * 0.5,
+            {
+              rotation: randomInteger(-60, 60),
+              y: randomInteger(200, 500),
+              x: randomInteger(-480, 480),
+              ease: Power2.easeOut,
+            },
+            'slide3+=' + Math.random() * 0.5
+          )
+        })
+        $('.four').each(function (index) {
+          tl.to(
+            this,
+            0.5,
+            {
+              rotation: randomInteger(-6, 10),
+              x: randomInteger(-2, 2),
+              y: randomInteger(-4, 4),
+            },
+            'sentence4+=' + index * 0.3
+          )
+        })
+
+        $('.four').each(function (index) {
+          tl.to(
+            this,
+            0.4 + Math.random() * 0.5,
+            {
+              rotation: randomInteger(-60, 60),
+              y: randomInteger(200, 500),
+              x: randomInteger(-480, 480),
+              ease: Power2.easeOut,
+            },
+            'slide4+=' + Math.random() * 0.5
+          )
+        })
+
+        $('.five').each(function (index) {
+          tl.to(
+            this,
+            0.5,
+            {
+              rotation: randomInteger(-6, 10),
+              x: randomInteger(-2, 2),
+              y: randomInteger(-4, 4),
+            },
+            'sentence5+=' + index * 0.3
+          )
+        })
+
+        $('.five').each(function (index) {
+          tl.to(
+            this,
+            0.4 + Math.random() * 0.5,
+            {
+              rotation: randomInteger(-60, 60),
+              y: randomInteger(200, 500),
+              x: randomInteger(-480, 480),
+              ease: Power2.easeOut,
+            },
+            'slide5+=' + Math.random() * 0.5
+          )
+        })
+
+        $('.six').each(function (index) {
+          tl.to(
+            this,
+            0.5,
+            {
+              rotation: randomInteger(-6, 10),
+              x: randomInteger(-2, 2),
+              y: randomInteger(-4, 4),
+            },
+            'sentence6+=' + index * 0.3
+          )
+        })
+
+        $('.six').each(function (index) {
+          tl.to(
+            this,
+            0.4 + Math.random() * 0.5,
+            {
+              rotation: randomInteger(-60, 60),
+              y: randomInteger(200, 500),
+              x: randomInteger(-480, 480),
+              ease: Power2.easeOut,
+            },
+            'slide6+=' + Math.random() * 0.5
+          )
+        })
+
+        $('.seven').each(function (index) {
+          tl.to(
+            this,
+            0.5,
+            {
+              rotation: randomInteger(-6, 10),
+              x: randomInteger(-2, 2),
+              y: randomInteger(-4, 4),
+            },
+            'sentence7+=' + index * 0.3
+          )
+        })
+
+        $('.seven').each(function (index) {
+          tl.to(
+            this,
+            0.4 + Math.random() * 0.5,
+            {
+              rotation: randomInteger(-60, 60),
+              y: randomInteger(200, 500),
+              x: randomInteger(-480, 480),
+              ease: Power2.easeOut,
+            },
+            'slide7+=' + Math.random() * 0.5
+          )
+        })
+
+        $('.eight').each(function (index) {
+          tl.to(
+            this,
+            0.5,
+            {
+              rotation: randomInteger(-6, 10),
+              x: randomInteger(-2, 2),
+              y: randomInteger(-4, 4),
+            },
+            'sentence8+=' + index * 0.3
+          )
+        })
+
+        $('.eight').each(function (index) {
+          tl.to(
+            this,
+            0.4 + Math.random() * 0.5,
+            {
+              rotation: randomInteger(-60, 60),
+              y: randomInteger(200, 500),
+              x: randomInteger(-480, 480),
+              ease: Power2.easeOut,
+            },
+            'slide8+=' + Math.random() * 0.5
+          )
+        })
+
+        tl.staggerTo(
+          frames,
+          0.3,
+          {autoAlpha: 0, scale: 0, ease: Back.easeIn.config(5)},
+          0.01,
+          'end+=' + randomInteger(0, 5) / 4
+        )
+      })
+
+      function randomInteger(min, max) {
+        return Math.floor(Math.random() * (1 + max - min) + min)
+      }
+    </script>
+  </head>
+
+  <body>
+    <a href="#">
+      <div id="text">
+        <div id="logo"><img src="images/logo.png" /></div>
+        <div id="bar">
+          <h1>
+            <span class="tagline">ITP Innovation Lab:</span><br />
+            <span class="tagline" style="font-size: 24px"
+              >Exhibits, Museums and Public Spaces</span
+            ><br /><span class="tagline" style="font-size: 18px"
+              >July 6 - 31, 2015</span
+            >
+          </h1>
+        </div>
+      </div></a
+    >
+
+    <h2 class="learnmore">
+      <a href="#">Learn More &rarr;</a>
+    </h2>
+    <div id="container">
+      <div class="center">
+        <img src="images/tinker.png" class="frame one" />
+        <img src="images/play.png" class="frame one" />
+        <img src="images/explore.png" class="frame one" />
+        <img src="images/learn.png" class="frame one" />
+        <img src="images/do.png" class="frame one" />
+      </div>
+      <div class="center">
+        <img src="images/go.png" class="frame two" />
+        <img src="images/out.png" class="frame two" />
+        <img src="images/on.png" class="frame two" />
+        <img src="images/a.png" class="frame two" />
+        <img src="images/limb.png" class="frame two" />
+      </div>
+      <div class="center">
+        <img src="images/fall.png" class="frame three" />
+        <img src="images/off.png" class="frame three" />
+      </div>
+
+      <div class="center">
+        <img src="images/make.png" class="frame four" />
+        <img src="images/remake.png" class="frame four" />
+        <img src="images/connect.png" class="frame four" />
+      </div>
+      <div class="center">
+        <img src="images/try.png" class="frame five" />
+        <img src="images/test.png" class="frame five" />
+        <img src="images/fail.png" class="frame five" />
+      </div>
+      <div class="center">
+        <img src="images/combine.png" class="frame six" />
+        <img src="images/collaborate.png" class="frame six" />
+        <img src="images/stretch.png" class="frame six" />
+        <img src="images/create.png" class="frame six" />
+      </div>
+      <div class="center">
+        <img src="images/sketch.png" class="frame seven" />
+        <img src="images/dance.png" class="frame seven" />
+        <img src="images/build.png" class="frame seven" />
+        <img src="images/solder.png" class="frame seven" />
+      </div>
+
+      <div class="center">
+        <img src="images/tweak.png" class="frame eight" />
+        <img src="images/smash.png" class="frame eight" />
+        <img src="images/kludge.png" class="frame eight" />
+        <img src="images/experiment.png" class="frame eight" />
+      </div>
+    </div>
+  </body>
+</html>

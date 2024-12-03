@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mix It Up</title>
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="jquery.mixitup.min.js"></script>
+    <script type="text/javascript">
+      // https://www.kunkalabs.com/mixitup/
+      $(function () {
+        // we can add event listeners to indiviudal elements manually
+        $('#reset').click(function (event) {
+          $('#Container').mixItUp('filter', 'all')
+        })
+
+        $('#Container').mixItUp({
+          load: {
+            filter: 'all',
+          },
+          controls: {
+            toggleFilterButtons: true, // allows more than 1 filter to be selected at once, try changing this to false
+            toggleLogic: 'and', // when more than one button is selected, only show the ones that have all selected filter
+          },
+          animation: {
+            enable: true,
+            effects: 'fade scale',
+            duration: 500,
+            easing: 'ease',
+            perpectiveDistance: '3000px',
+            perspectiveOrigin: '50% 50%',
+            queue: true,
+            queueLimit: 1,
+            animateChangeLayout: false,
+            animateResizeContainer: true,
+            animateResizeTargets: false,
+            staggerSequence: null,
+            reverseOut: false,
+          },
+          callbacks: {
+            onMixEnd: function (state) {
+              console.log(state)
+              // you can call whatever JS you want here just make it inside of this function!
+            },
+          },
+        })
+      })
+    </script>
+    <style type="text/css">
+      /* GLOBAL STYLES */
+
+      * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      body,
+      button {
+        font-family: 'Helvetica Neue', arial, sans-serif;
+      }
+
+      /* CONTROLS */
+
+      .controls {
+        padding: 1%;
+        background: #111;
+        color: white;
+      }
+
+      label {
+        font-weight: 300;
+        margin: 0 20px 0 0;
+      }
+
+      button {
+        display: inline-block;
+        padding: 5px 10px;
+        background: #666;
+        border: 0;
+        color: #eee;
+        font-size: 16px;
+        font-weight: 100;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button.active {
+        background: #999;
+      }
+
+      button:focus {
+        outline: 0 none;
+      }
+
+      button + label {
+        margin-left: 1em;
+      }
+
+      /* Mix Styles */
+
+      .container {
+        position: relative;
+        padding: 2% 2% 0;
+        text-align: justify;
+        font-size: 0.1px;
+        background: #ddd;
+        min-height: 200px;
+        /* -webkit-backface-visibility: hidden; */
+      }
+
+      /* This is needed for spacing between mix elements  */
+      .container:after {
+        content: '';
+        display: inline-block;
+        width: 100%;
+      }
+
+      /* Mobile First Styling method, this will apply unless a screen of a certain min-width is detected */
+      .container .mix,
+      .container .gap {
+        display: inline-block;
+        width: 100%;
+      }
+
+      .container .mix {
+        text-align: left;
+        background: #aaa;
+        margin-bottom: 2%;
+        border-radius: 8px;
+        display: none;
+      }
+
+      .container .mix:after {
+        /* We can echo out a data-attribute or class here */
+        /* content: attr(data-myorder); */
+        content: attr(class);
+        color: white;
+        font-size: 16px;
+        display: inline-block;
+        vertical-align: top;
+        padding: 4% 6%;
+        font-weight: 300;
+      }
+
+      /* This is optional, we are just adding some extra padding so our boxes are larger than our text, we could also use min-height on .mix elements*/
+
+      .container .mix:before {
+        content: '';
+        display: inline-block;
+        padding-top: 60%;
+      }
+
+      .container .fail-message {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 2%;
+        text-align: center;
+        /* Hide by default, only show when no matches, this is part of mix-it-up */
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      /* When the .fail class is added to container, show our error message */
+      .container.fail .fail-message {
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      .container .fail-message:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+      }
+
+      .container .fail-message span {
+        display: inline-block;
+        font-weight: 500;
+        color: #333;
+        font-size: 20px;
+        vertical-align: middle;
+      }
+
+      /* Since we are doing mobile first media design in this example, we need to explicitly say what will happen on loarger screens */
+
+      /* Larger Phones and Tablets (2 items per row)*/
+      @media all and (min-width: 768px) {
+        .container .mix,
+        .container .gap {
+          width: 48%;
+        }
+      }
+
+      /* Desktop (4 items per row) */
+      @media all and (min-width: 1024px) {
+        .container .mix,
+        .container .gap {
+          width: 24%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="controls">
+      <label>Filter:</label>
+      <button class="filter" data-filter=".dogs">Dogs</button>
+      <button class="filter" data-filter=".cats">Cats</button>
+      <button class="filter" data-filter=".goats">Goats</button>
+      <button id="reset">Reset</button>
+      <!-- We can also sort using data-myorder attribute, see settings -->
+      <label>Sort:</label>
+      <button class="sort" data-sort="default">Default</button>
+      <button class="sort" data-sort="myorder:asc">Ascending</button>
+      <button class="sort" data-sort="myorder:desc">Descending</button>
+      <button class="sort" data-sort="random">Random</button>
+    </div>
+    <div id="Container" class="container">
+      <!-- Do fail message after advanced filter -->
+      <div class="fail-message">
+        <span>No items were found matching the current filters.</span>
+      </div>
+
+      <!-- Content to filter and sort -->
+      <div class="mix dogs cats" data-myorder="1"></div>
+      <div class="mix cats" data-myorder="2"></div>
+      <div class="mix dogs cats" data-myorder="3"></div>
+      <div class="mix dogs goats" data-myorder="4"></div>
+      <div class="mix goats" data-myorder="5"></div>
+      <!-- These gap divs are put here to make sure your elements always stack with the correct spacing, try removing them, and see how spacing changes with different layouts -->
+      <div class="gap"></div>
+      <div class="gap"></div>
+    </div>
+  </body>
+</html>

@@ -1,10 +1,7 @@
 # Async/Await, Callback and Data
 
-Today we will pick up where we left off with our first API calls. Now that we are retrieving data and logging results, let's take a look at using it in callback functions.
-
 Today's class will be code and inline note heavy. Please be sure to grab the `starter.html` file from this folder, and copy it to wherever you take notes. Please code along on this one. Final example code will be posted after class so you can compare with your own notes.
 
-Please put your questions in the chat of the Zoom presentation. I will address them during breaks and at the end of class.
 
 ## API Endpoints for todays exercise:
 
